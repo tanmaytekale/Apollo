@@ -2,14 +2,14 @@
 
 Apollo is an Agentic AI system that detects whether an image or video is AI-generated and explains *why* it believes so. It combines deepfake detection models with a reasoning agent that communicates findings in simple, human terms.
 
-### 🌞 Theme
+### Theme
 Built for MumbaiHacks 2025 – Track: Misinformation  
 Theme: Agentic AI
 
-### 🧠 Concept
+### Concept
 In an age where AI-generated visuals blur reality, Apollo acts as the "god of truth" — analyzing media for authenticity and providing transparent, explainable verification.
 
-### ⚙️ Tech Stack
+### Tech Stack
 - Python  
 - PyTorch / TensorFlow  
 - Hugging Face (AI-content detection models)  
@@ -17,7 +17,7 @@ In an age where AI-generated visuals blur reality, Apollo acts as the "god of tr
 - OpenAI API or Llama 3 (for reasoning)  
 - EXIF & metadata analysis tools  
 
-### 🚀 How It Works
+### How It Works
 1. User uploads an image (or short video frame).  
 2. Detection model predicts authenticity confidence.  
 3. Agent layer analyzes artifacts, metadata, and context.  
@@ -25,13 +25,12 @@ In an age where AI-generated visuals blur reality, Apollo acts as the "god of tr
    *“Lighting inconsistencies suggest AI generation (Confidence: 87%).”*  
 5. (Future scope) Adds browser extension + API integration.  
 
-### 💰 Business Model
+### Business Model
 Freemium for users, API licensing for enterprises, partnerships with media & government agencies.
 
-### 🧑‍💻 Team Apollo
-- [Your Names Here]  
-- Atlas SkillTech University  
+### Building
+- Built by Team Helios  
 - Built for MumbaiHacks 2025  
 
-### 📅 Status
+### Status
 MVP under development – to be demoed live at MumbaiHacks 2025.

@@ -11,6 +11,7 @@ import pillow_heif
 import torch
 import torch.nn as nn
 from transformers import AutoTokenizer, AutoConfig, AutoModel, PreTrainedModel
+from video_detection_service import process_video
 
 app = FastAPI()
 
@@ -229,16 +230,31 @@ async def detect_video(file: UploadFile = File(...)):
         if file_size == 0:
             raise HTTPException(status_code=400, detail="Uploaded file is empty")
 
-        # Mock Result for now
-        # In the future, we will process the video here
-        import random
-        is_ai = random.choice([True, False])
-        confidence = random.uniform(0.7, 0.99)
+        # Process the video using the detection service
+        print(f"Processing video: {temp_filename}")
+        detection_result = process_video(temp_filename)
         
-        label = "AI Generated" if is_ai else "Real Video"
+        if "error" in detection_result:
+             print(f"Detection failed: {detection_result['error']}")
+             raise HTTPException(status_code=500, detail=detection_result["error"])
+             
+        verdict = detection_result.get("verdict", "Unknown")
+        confidence = detection_result.get("confidence", "0%")
+        reasoning = detection_result.get("reasoning", [])
         
-        result = [label, f"{confidence:.1%} Confidence"]
-        return {"result": result}
+        # Map verdict to label
+        # Detector returns "AI-GENERATED (FAKE)" or "REAL VIDEO"
+        if "FAKE" in verdict:
+            label = "AI Generated"
+        else:
+            label = "Real Video"
+            
+        result = [label, confidence]
+        
+        return {
+            "result": result,
+            "reasoning": reasoning
+        }
         
     except Exception as e:
         print(f"Error during video detection: {e}")

@@ -65,7 +65,7 @@ export default function DetectImageScreen({ navigation }) {
 
         try {
             // TODO: Replace with your actual ngrok/public URL
-            const API_URL = 'https://pseudoskeletal-yung-implausibly.ngrok-free.dev/detect-image';
+            const API_URL = 'https://c25518ac927b.ngrok-free.app/detect-image';
             // For Android Emulator use http://10.0.2.2:8000/detect-image
             // For Physical Device use ngrok URL
 

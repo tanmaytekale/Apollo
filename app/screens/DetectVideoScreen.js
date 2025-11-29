@@ -62,7 +62,7 @@ export default function DetectVideoScreen({ navigation }) {
 
         try {
             // TODO: Replace with your actual ngrok/public URL
-            const API_URL = 'https://pseudoskeletal-yung-implausibly.ngrok-free.dev/detect-video';
+            const API_URL = 'https://c25518ac927b.ngrok-free.app/detect-video';
 
             const formData = new FormData();
             formData.append('file', {

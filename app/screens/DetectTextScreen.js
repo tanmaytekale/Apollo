@@ -47,7 +47,7 @@ export default function DetectTextScreen({ navigation }) {
 
         try {
             // TODO: Replace with your actual ngrok/public URL
-            const API_URL = 'https://pseudoskeletal-yung-implausibly.ngrok-free.dev/detect';
+            const API_URL = 'https://c25518ac927b.ngrok-free.app/detect';
 
             const response = await fetch(API_URL, {
                 method: 'POST',

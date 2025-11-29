@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+transformers
+torch
+requests
+python-multipart
+pyngrok
+Pillow
+pillow-heif
+torch
+transformers
